@@ -105,8 +105,8 @@ function renderGates() {
   container.innerHTML = "";
 
   GATES.forEach(g => {
-    const apple = `https://maps.apple.com/?daddr=${g.lat},${g.lon}&dirflg=d`;
-    const google = `https://www.google.com/maps/dir/?api=1&destination=${g.lat},${g.lon}&travelmode=driving`;
+    const google = `https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=${g.lat},${g.lon}&travelmode=driving`;
+const apple  = `https://maps.apple.com/?saddr=Current%20Location&daddr=${g.lat},${g.lon}&dirflg=d`;
 
     const div = document.createElement("div");
     div.className = "gate-card";
