@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Safari Drive Assistant</title>
-
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Leaflet (map) -->
+  <!-- Leaflet Map -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -20,16 +17,16 @@
 
 <div class="app">
   <h1>🦁 Safari Drive Assistant</h1>
-  <p class="subtitle">Hluhluwe–iMfolozi Big 5 Self-Drive</p>
+  <p class="subtitle">Hluhluwe–iMfolozi Self-Drive</p>
 
   <div class="card">
-    <h2>🗺️ Live Map</h2>
-    <p class="muted" id="gpsStatus">Requesting location… (allow when prompted)</p>
+    <h2>🗺️ Live Park Map</h2>
+    <p id="gpsStatus" class="muted">Requesting location…</p>
     <div id="map"></div>
 
     <div class="row">
-      <button class="btn secondary" id="btnCenterMe">Center on me</button>
-      <button class="btn secondary" id="btnFitGates">Show gates</button>
+      <button class="btn secondary" onclick="centerOnMe()">Center on me</button>
+      <button class="btn secondary" onclick="fitGates()">Show gates</button>
     </div>
   </div>
 
@@ -40,30 +37,22 @@
 
   <div class="card">
     <h2>🕒 Drive Mode</h2>
-    <p id="modeText" class="mode">Loading mode…</p>
-  </div>
-
-  <div class="card">
-    <h2>📋 Checklist</h2>
-    <ul id="checklist"></ul>
+    <p id="modeText"></p>
   </div>
 
   <div class="card warning">
     <h2>⚠️ Predator Logic</h2>
     <p>
-      If animals are running or birds alarm:
-      <br/>➡️ STOP
-      <br/>➡️ Engine off
-      <br/>➡️ Scan nearby bush
+      If animals run or birds alarm:
+      <br>➡️ STOP
+      <br>➡️ Engine off
+      <br>➡️ Scan bushes
     </p>
   </div>
 
-  <p class="footer">
-    iPhone: Share → <strong>Add to Home Screen</strong> to install.
-  </p>
+  <p class="footer">Add to Home Screen for best experience</p>
 </div>
 
-<!-- Leaflet (map) -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="app.js"></script>
 </body>
